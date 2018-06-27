@@ -1,0 +1,2 @@
+Host borg.jm1.me
+    IdentityFile /root/.ssh/id_rbackup

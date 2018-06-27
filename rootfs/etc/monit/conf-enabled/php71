@@ -1,0 +1,4 @@
+check process phpfpm71 with pidfile /run/php/php7.1-fpm.pid
+start program = "/etc/init.d/php7.1-fpm restart"
+stop program  = "/etc/init.d/php7.1-fpm stop"
+

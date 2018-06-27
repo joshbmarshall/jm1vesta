@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "FLUSH TABLES WITH READ LOCK; system /usr/bin/backupsnapwait; UNLOCK TABLES;" | mysql

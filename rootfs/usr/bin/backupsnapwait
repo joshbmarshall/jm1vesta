@@ -1,0 +1,7 @@
+#!/bin/bash
+
+touch /backup/snapready
+until [ -f /backup/snaptaken ]
+do
+	 sleep 1
+done
