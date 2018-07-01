@@ -334,9 +334,10 @@ RUN \
     && rm -rf /etc/nginx \
     && ln -s /vesta/etc/nginx /etc/nginx \
 # exim
-    && mv /etc/exim4   /vesta-start/etc/exim4 \
-    && rm -rf /etc/exim4 \
-    && ln -s /vesta/etc/exim4 /etc/exim4 \
+    && mkdir /vesta-start/etc/exim4 \
+    && mv /etc/exim4/domains   /vesta-start/etc/exim4/domains \
+    && rm -rf /etc/exim4/domains \
+    && ln -s /vesta/etc/exim4/domains /etc/exim4/domains \
 # spamassassin
     && mv /etc/spamassassin   /vesta-start/etc/spamassassin \
     && rm -rf /etc/spamassassin \
