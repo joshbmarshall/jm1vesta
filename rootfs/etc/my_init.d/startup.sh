@@ -56,6 +56,12 @@ else
     echo "[err] unable to locate /home/admin/bin/my-startup.sh"
 fi
 
+# Start PHP-FPM
+/etc/init.d/php5.6-fpm restart
+/etc/init.d/php7.0-fpm restart
+/etc/init.d/php7.1-fpm restart
+/etc/init.d/php7.2-fpm restart
+
 # start monit
 /etc/init.d/monit restart
 
