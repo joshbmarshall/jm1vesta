@@ -41,7 +41,7 @@ fi
 
 # force some config files
 cp /sysprepz/bind/named.conf.options /etc/bind/named.conf.options
-cp /sysprepz/exim4/exim4.conf.template /etc/exim4/exim4.conf.template
+cp /sysprepz/exim/exim4.conf.template /etc/exim4/exim4.conf.template
 chown root /etc/exim4/exim4.conf.template
 rsync --delete --update -raz /sysprepz/packages/ /usr/local/vesta/data/packages/
 
