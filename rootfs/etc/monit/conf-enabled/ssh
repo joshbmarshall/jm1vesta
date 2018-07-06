@@ -1,5 +1,5 @@
 check process ssh
-  with pidfile /run/ssh.pid
+  with pidfile /run/sshd.pid
   group system
   start "/etc/init.d/ssh start"
   stop "/etc/init.d/ssh stop"

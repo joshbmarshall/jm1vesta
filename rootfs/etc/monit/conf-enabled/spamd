@@ -1,5 +1,5 @@
 check process spamd
-  with pidfile /run/spam.pid
+  with pidfile /run/spamd.pid
   group system
   start "/etc/init.d/spamassassin start"
   stop "/etc/init.d/spamassassin stop"
