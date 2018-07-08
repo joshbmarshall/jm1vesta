@@ -355,9 +355,9 @@ RUN \
     && rm -rf /etc/dovecot \
     && ln -s /vesta/etc/dovecot /etc/dovecot \
 # mysql config
-    && mv /etc/mysql   /vesta-start/etc/mysql \
-    && rm -rf /etc/mysql \
-    && ln -s /vesta/etc/mysql /etc/mysql \
+#    && mv /etc/mysql   /vesta-start/etc/mysql \
+#    && rm -rf /etc/mysql \
+#    && ln -s /vesta/etc/mysql /etc/mysql \
 # mysql
     && mv /var/lib/mysql /vesta-start/var/lib/mysql \
     && rm -rf /var/lib/mysql \
