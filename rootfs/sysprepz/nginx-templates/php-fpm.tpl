@@ -68,5 +68,6 @@ server {
 
     include /etc/nginx/location_optmz_php.conf;
 
+    include %home%/%user%/web/%domain%/private/*.conf;
     include %home%/%user%/conf/web/nginx.%domain%.conf*;
 }

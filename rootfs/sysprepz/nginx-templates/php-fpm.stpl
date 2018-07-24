@@ -1,7 +1,6 @@
 server {
-    listen      %proxy_ssl_port% http2;
+    listen      %proxy_ssl_port% http2 ssl;
     server_name %domain_idn% %alias_idn%;
-    ssl         on;
     ssl_certificate      %ssl_pem%;
     ssl_certificate_key  %ssl_key%;
 
@@ -65,6 +64,10 @@ server {
     location /vstats/ {
         alias   %home%/%user%/web/%domain%/stats/;
         include %home%/%user%/web/%domain%/stats/auth.conf*;
+    }
+
+    location /webmail {
+        proxy_pass	http://webmail/;
     }
 
     include /etc/nginx/location_optmz_php.conf;
