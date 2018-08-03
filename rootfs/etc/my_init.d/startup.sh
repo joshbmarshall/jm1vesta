@@ -45,6 +45,7 @@ cp /sysprepz/exim/exim4.conf.template /etc/exim4/exim4.conf.template
 chown root /etc/exim4/exim4.conf.template
 rsync --delete --update -raz /sysprepz/packages/ /usr/local/vesta/data/packages/
 cp -Rp /sysprepz/nginx-templates/* /usr/local/vesta/data/templates/web/nginx/
+cp -Rp /sysprepz/apache2-templates/* /usr/local/vesta/data/templates/web/apache2/
 
 # load root ssh keys
 rsync --update -raz /sysprepz/rootssh/ /root/.ssh/

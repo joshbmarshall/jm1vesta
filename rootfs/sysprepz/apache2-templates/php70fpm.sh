@@ -18,9 +18,9 @@ listen.group = www-data
 listen.mode = 0660
 
 pm = ondemand
-pm.max_children = 5
+pm.max_children = 10
 pm.process_idle_timeout = 10s
-pm.max_requests = 2000
+pm.max_requests = 6000
 "
 fpm_conf_file="$home_dir/$user/web/$domain/cgi-bin/php-fpm.conf"
 
