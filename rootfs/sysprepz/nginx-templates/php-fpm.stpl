@@ -9,6 +9,8 @@ server {
     access_log  /var/log/%web_system%/domains/%domain%.bytes bytes;
     error_log   /var/log/%web_system%/domains/%domain%.error.log error;
 
+    underscores_in_headers on;
+
     set $site "%docroot%/public";
     if (!-d %docroot%/public) {
         set $site "%docroot%";
@@ -26,10 +28,8 @@ server {
         }
 
         location ~ [^/]\.php(/|$) {
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            if (!-f $document_root$fastcgi_script_name) {
-                return  404;
-            }
+            fastcgi_param SCRIPT_FILENAME $request_filename;
+            try_files $uri =404;
 
             if ($http_cookie ~ (comment_author_.*|wordpress_logged_in.*|wp-postpass_.*)) {
                 set $no_cache 1;
@@ -39,7 +39,7 @@ server {
 
             fastcgi_index index.php;
             fastcgi_pass  unix:/var/run/vesta-php-fpm-%domain_idn%.sock;
-            fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+            fastcgi_param SCRIPT_FILENAME  $request_filename;
             fastcgi_intercept_errors on;
 
             fastcgi_cache_use_stale error timeout invalid_header http_500;
